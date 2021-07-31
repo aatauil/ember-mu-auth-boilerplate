@@ -1,3 +1,9 @@
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/52280338/127741793-0a20161f-5249-499f-8923-fa03a89ddc84.png" alt="ember-mu-auth-boilerplate" />
+</p>
+
+
+
 # ember-mu-auth-boilerplate
 
 This README outlines the details of collaborating on this Ember application.

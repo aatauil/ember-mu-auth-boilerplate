@@ -1,0 +1,15 @@
+<h2> Login to your account </h2>
+
+<form method="post">
+  <label for="email-address" class="sr-only">Email address</label>
+  <Input id="email-address" @name="email" @type="email" autocomplete="email" @value={{this.email}} placeholder="Email address" />
+  <label for="password" class="sr-only">Password</label>
+  <Input id="password" @name="password" @type="password" autocomplete="current-password" @value={{this.password}} placeholder="Password" />
+  <button type="submit" {{on 'click' this.login}}>Sign in</button>
+</form>
+
+<LinkTo @route="register"> Go to registration page</LinkTo>
+
+{{#if this.error}}
+  <h3>{{this.error}}</h3>
+{{/if}}

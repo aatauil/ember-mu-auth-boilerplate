@@ -1,0 +1,12 @@
+<h3>Delete your account</h3>
+<p>Once you delete your account, you will lose all data associated with it.</p>
+
+<button type="button" {{on 'click' this.deleteAccount}}>Delete account</button>
+
+{{#if this.error}}
+  <h3>{{this.error}}</h3>
+{{/if}}
+
+{{#if this.success}}
+  <h3>{{this.success}}</h3>
+{{/if}}

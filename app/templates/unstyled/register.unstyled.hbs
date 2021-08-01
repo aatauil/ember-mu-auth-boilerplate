@@ -1,0 +1,17 @@
+{{page-title "Register"}}
+
+<label for="email">
+  Email
+  <Input @type="email" @name="email" @value={{this.email}}/>
+</label>
+
+<label for="password">
+  Password
+  <Input @type="password" @name="password" @value={{this.password}}/>
+</label>
+
+<button type="button" {{ on 'click' this.register }}>Register</button><br>
+
+{{#if this.error }}
+  {{ this.error }}
+{{/if}}

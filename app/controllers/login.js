@@ -22,7 +22,7 @@ export default class LoginController extends Controller {
           password: this.password
         });
       } catch(err){
-        this.error = err.errors[0].detail;
+        this.error = err.errors[0].title;
       }
     }
 }

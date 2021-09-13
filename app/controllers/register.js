@@ -34,7 +34,7 @@ export default class RegisterController extends Controller {
           this.success  = true;
         }
       } catch(err){
-        this.error = err.errors[0].detail;
+        this.error = err.errors[0].title;
       }
 
       // Auto login section

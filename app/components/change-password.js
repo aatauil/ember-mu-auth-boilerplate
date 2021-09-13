@@ -46,7 +46,7 @@ export default class ChangePasswordComponent extends Component {
           throw response;
         }
       } catch (err){
-        this.error = err.errors[0].detail;
+        this.error = err.errors[0].title;
       }
     }
 }

@@ -9,7 +9,7 @@ export default class LogoutComponent extends Component {
     try {
       await this.session.invalidate('authenticator:mu-semtech');
     } catch(err){
-      this.error = err.errors[0].detail;
+      this.error = err.errors[0].title;
     }
   }
 }

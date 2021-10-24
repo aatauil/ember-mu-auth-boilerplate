@@ -4,7 +4,7 @@ import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 
 export default class DeleteAccountComponent extends Component {
-  @service router;
+  @service session;
   @tracked error;
 
   @action
@@ -18,13 +18,15 @@ export default class DeleteAccountComponent extends Component {
             'Content-Type': 'application/vnd.api+json'
           })
         });
+
         if(result.ok){
-          this.router.transitionTo('login');
+          await this.session.invalidate('authenticator:mu-semtech');
         } else {
-          this.error = "Something went wrong, try again later.";
+          const response = await result.json();
+          throw response;
         }
       } catch (err){
-        this.error = err.msg;
+        this.error = err.errors[0].title;
       }
     }
 }
